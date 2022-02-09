@@ -1,6 +1,7 @@
 import Square from '../square';
 
 function Board({ squares, selectSquare }) {
+	console.log(squares);
 	return (
 		<div>
 			{squares.map((square, index) => {
