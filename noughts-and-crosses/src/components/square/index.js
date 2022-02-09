@@ -5,7 +5,11 @@ import React from "react";
 
 function Square({ move, HandleTurn }) {
   //HandleTurn();
-  return <div className="square">{move}</div>;
+  return (
+    <div className="square">
+      <input />{" "}
+    </div>
+  );
 }
 
 export default Square;
