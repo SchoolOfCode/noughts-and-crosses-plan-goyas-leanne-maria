@@ -1,33 +1,13 @@
-import { useState } from "react";
-import Square from "../square";
-import Game from "../game";
+import Square from '../square';
 
-// One state to set the board
-// One state to set the player's turn
-
-function Board({ board, move, handleTurn }) {
-  return (
-    <div>
-      <div style={{ display: "flex" }}>
-        Hello
-        <Square move={move} handleTurn={handleTurn} />
-        <Square move={move} handleTurn={handleTurn} />
-        <Square move={move} handleTurn={handleTurn} />
-      </div>
-      <div style={{ display: "flex" }}>
-        Hello
-        <Square move={move} handleTurn={handleTurn} />
-        <Square move={move} handleTurn={handleTurn} />
-        <Square move={move} handleTurn={handleTurn} />
-      </div>
-      <div style={{ display: "flex" }}>
-        Hello
-        <Square move={move} handleTurn={handleTurn} />
-        <Square move={move} handleTurn={handleTurn} />
-        <Square move={move} handleTurn={handleTurn} />
-      </div>
-    </div>
-  );
+function Board({ squares, selectSquare }) {
+	return (
+		<div>
+			{squares.map((square, index) => {
+				return <Square key={index} value={square} onClick={() => selectSquare(index)} />;
+			})}
+		</div>
+	);
 }
 
 export default Board;
