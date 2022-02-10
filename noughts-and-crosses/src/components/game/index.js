@@ -3,12 +3,12 @@ import Board from '../board';
 import { calculateWinner } from '../../helper.js';
 
 function Game() {
-	const [ board, setBoard ] = useState([ null, null, null ]);
+	const [ board, setBoard ] = useState(Array(9).fill(null));
+
 	const [ turnX, setTurnX ] = useState(true);
+	console.log('turn', turnX);
 	const winner = calculateWinner(board);
 	const currentPlayer = turnX ? 'X' : 'O';
-
-	console.log(board);
 
 	function handleSquareClick(index) {
 		// maybe ask about how this works?
@@ -20,6 +20,7 @@ function Game() {
 		setTurnX(!turnX);
 	}
 
+	console.log('board', board);
 	return (
 		<div>
 			<Board squares={board} selectSquare={handleSquareClick} />;
